@@ -57,7 +57,7 @@ features_dict = {
         "null_perc": 0.94,
         "len_uniques": 3,
         "data_obj_type": "object",
-        "notes": "-"
+        "notes": "Tiene demasiados valores vacíos."
     },
     "Lot Shape": {
         "relevant": False,
