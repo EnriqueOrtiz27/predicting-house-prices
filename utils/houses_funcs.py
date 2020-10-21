@@ -266,7 +266,7 @@ def clean_data(data):
     data_clean = data_clean[data_clean["Gr Liv Area"] < 4_000]
 
 
-    ## Maintain "Sale Condition" with tag "Normal" only
+    ## Maintain "Sale Condition" with tag "Normal"
     data_clean = data_clean[data_clean["Sale Condition"] == "Normal"]
 
 

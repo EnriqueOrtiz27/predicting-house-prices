@@ -24,7 +24,7 @@ features_dict = {
         "data_default_type": "object",
         "null_perc": 0.0,
         "len_uniques": 7,
-        "data_obj_type": "object",
+        "data_obj_type": "category",
         "notes": "-"
     },
     "Lot Frontage": {
@@ -140,12 +140,12 @@ features_dict = {
         "notes": "-"
     },
     "Overall Qual": {
-        "relevant": False,
+        "relevant": True,
         "data_default_type": "int64",
         "null_perc": 0.0,
         "len_uniques": 10,
         "data_obj_type": "int64",
-        "notes": "-"
+        "notes": "La matriz de correlación muestra claramente que hay una muy buena relación de esta variable y el precio de venta. (> 0.6)"
     },
     "Overall Cond": {
         "relevant": False,
@@ -224,7 +224,7 @@ features_dict = {
         "data_default_type": "object",
         "null_perc": 0.0,
         "len_uniques": 4,
-        "data_obj_type": "object",
+        "data_obj_type": "category",
         "notes": "-"
     },
     "Exter Cond": {
@@ -232,7 +232,7 @@ features_dict = {
         "data_default_type": "object",
         "null_perc": 0.0,
         "len_uniques": 4,
-        "data_obj_type": "object",
+        "data_obj_type": "category",
         "notes": "-"
     },
     "Foundation": {
@@ -308,12 +308,12 @@ features_dict = {
         "notes": "-"
     },
     "Total Bsmt SF": {
-        "relevant": False,
+        "relevant": True,
         "data_default_type": "int64",
         "null_perc": 0.0,
         "len_uniques": 646,
         "data_obj_type": "int64",
-        "notes": "-"
+        "notes": "La matriz de correlación muestra claramente que hay una muy buena relación de esta variable y el precio de venta. (> 0.6)"
     },
     "Heating": {
         "relevant": False,
@@ -348,12 +348,12 @@ features_dict = {
         "notes": "-"
     },
     "1st Flr SF": {
-        "relevant": False,
+        "relevant": True,
         "data_default_type": "int64",
         "null_perc": 0.0,
         "len_uniques": 675,
         "data_obj_type": "int64",
-        "notes": "-"
+        "notes": "La matriz de correlación muestra claramente que hay una muy buena relación de esta variable y el precio de venta. (> 0.6)"
     },
     "2nd Flr SF": {
         "relevant": False,
@@ -377,7 +377,7 @@ features_dict = {
         "null_perc": 0.0,
         "len_uniques": 782,
         "data_obj_type": "int64",
-        "notes": "-"
+        "notes": "La matriz de correlación muestra claramente que hay una muy buena relación de esta variable y el precio de venta. (> 0.6)"
     },
     "Bsmt Full Bath": {
         "relevant": False,
@@ -492,20 +492,20 @@ features_dict = {
         "notes": "-"
     },
     "Garage Cars": {
-        "relevant": False,
+        "relevant": True,
         "data_default_type": "int64",
         "null_perc": 0.0,
         "len_uniques": 5,
         "data_obj_type": "int64",
-        "notes": "-"
+        "notes": "La matriz de correlación muestra claramente que hay una muy buena relación de esta variable y el precio de venta. (> 0.6)"
     },
     "Garage Area": {
-        "relevant": False,
+        "relevant": True,
         "data_default_type": "int64",
         "null_perc": 0.0,
         "len_uniques": 399,
         "data_obj_type": "int64",
-        "notes": "-"
+        "notes": "La matriz de correlación muestra claramente que hay una muy buena relación de esta variable y el precio de venta. (> 0.6)"
     },
     "Garage Qual": {
         "relevant": False,
@@ -636,7 +636,7 @@ features_dict = {
         "notes": "-"
     },
     "Sale Condition": {
-        "relevant": True,
+        "relevant": False,
         "data_default_type": "object",
         "null_perc": 0.0,
         "len_uniques": 1,
