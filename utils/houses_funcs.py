@@ -239,6 +239,14 @@ def data_profiling_categ(data, cat_vars):
 
 
 
+## Display clean cross validation scores
+def display_scores(scores):
+    print("Scores:", scores)
+    print("Mean:", scores.mean())
+    print("Standard deviation:", scores.std())
+
+
+
 
 
 "------------------------------------------------------------------------------"
@@ -258,7 +266,7 @@ def clean_data(data):
     """
 
 
-    #@# Copy of raw data
+    ## Copy of raw data
     data_clean = data.copy()
 
 
@@ -266,7 +274,7 @@ def clean_data(data):
     data_clean = data_clean[data_clean["Gr Liv Area"] < 4_000]
 
 
-    ## Maintain "Sale Condition" with tag "Normal" only
+    ## Maintain "Sale Condition" with tag "Normal"
     data_clean = data_clean[data_clean["Sale Condition"] == "Normal"]
 
 
@@ -285,3 +293,31 @@ def clean_data(data):
 
 
     return data_clean
+
+
+
+## Formatting results for upload to kaggle
+def format_predicts(predictions):
+    """
+    Formatting results for upload to kaggle
+        args:
+            predictions (array): numpy array with prices predictions.
+        retrns:
+            predictions_res (dataframe): formatted dataframe with predictions.
+    """
+
+
+    ## Dataframe with formatted predictions.
+    predictions_res = pd.DataFrame(
+        {
+            "id": range(1, predictions.shape[0] + 1),
+            "SalePrice": predictions
+        }
+    )
+
+
+    ## Leaving column "id" as index
+    predictions_res.set_index("id", inplace=True)
+
+
+    return predictions_res
