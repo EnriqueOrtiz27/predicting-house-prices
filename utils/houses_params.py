@@ -228,7 +228,7 @@ features_dict = {
         "notes": "-"
     },
     "Exter Cond": {
-        "relevant": True,
+        "relevant": False,
         "data_default_type": "object",
         "null_perc": 0.0,
         "len_uniques": 4,
@@ -650,5 +650,13 @@ features_dict = {
         "len_uniques": 1203,
         "data_obj_type": "int64",
         "notes": "-"
-    }
+    },
+    "SalePrice": {
+        "relevant": False, ## This is set as False because "SalePrice" correspond to predict labels.
+        "data_default_type": "float64",
+        "null_perc": 0.0,
+        "len_uniques": 1203,
+        "data_obj_type": "float64",
+        "notes": "This is the variable we are trying to predict."
+    },
 }
