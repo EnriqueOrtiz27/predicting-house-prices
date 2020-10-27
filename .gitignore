@@ -9,3 +9,9 @@ __pycache__
 
 ## CSV
 *.csv
+
+## Datasets
+Robs/datasets
+
+## Models
+*.pkl
