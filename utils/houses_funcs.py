@@ -21,7 +21,7 @@ import numpy as np
 
 ## Ancillary modules
 
-from houses_params import *
+from houses_params import features_dict
 
 
 
@@ -321,3 +321,34 @@ def format_predicts(predictions):
 
 
     return predictions_res
+
+
+
+## Creating lists of variables by type.
+def lists_by_type_of_var(features_dict):
+    """
+    Creating lists of variables by type.
+        args:
+            features_dict (dictionary): specifications of all the problem's features.
+        returns:
+            housingc_num (list): numerical features.
+            housingc_cat (list): categorical features.
+    """
+    housingc_num = []
+    housingc_cat = []
+
+    for feat in features_dict:
+
+        if (features_dict[feat]["relevant"] == True) & \
+          ((features_dict[feat]["data_obj_type"] == "float64") | (features_dict[feat]["data_obj_type"] == "int64")) & \
+          (features_dict[feat]["ml_label"] != True):
+            housingc_num.append(feat)
+
+        elif (features_dict[feat]["relevant"] == True) & \
+          (features_dict[feat]["data_obj_type"] == "category"):
+            housingc_cat.append(feat)
+
+    print("Numerical columns: {}\n".format(housingc_num))
+    print("Categorical columns: {}".format(housingc_cat))
+
+    return housingc_num, housingc_cat
