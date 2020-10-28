@@ -738,6 +738,6 @@ features_dict = {
         "len_uniques": 1203,
         "data_obj_type": "float64",
         "notes": "This is the variable we are trying to predict.",
-        "ml_label": False
+        "ml_label": True
     },
 }
