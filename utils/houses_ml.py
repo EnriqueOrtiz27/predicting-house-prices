@@ -59,25 +59,27 @@ def select_model(model_sel="linear_regression"):
         args:
             model_sel (string): model to be used.
                 Options:
-                    - linear_regression
-                    - decision_tree
-                    - random_forest
+                    - linear_regression (lr)
+                    - decision_tree (dt)
+                    - random_forest (rf)
         returns:
             model (transformer)
     """
 
 
     ## Selecting the correct model.
-    if model_sel == "linear_regression":
+    if model_sel == "lr":
         model = LinearRegression()
 
-    elif model_sel == "decision_tree":
+    elif model_sel == "dt":
         model = DecisionTreeRegressor()
 
-    elif model_sel == "random_forest":
+    elif model_sel == "rf":
         model = RandomForestRegressor()
 
     else:
         raise NameError("RobError: Invalid model selected.")
+
+    print("The model that will be used is: ", model)
 
     return model

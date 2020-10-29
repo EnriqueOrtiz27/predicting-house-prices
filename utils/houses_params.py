@@ -5,6 +5,23 @@
 
 
 "------------------------------------------------------------------------------"
+###############################
+## Main execution parameters ##
+###############################
+
+
+## Path from main execution file to dataset.
+data_path_from_main = "../data/"
+
+## Name of files with projects data.
+train_data = "casas_entrena.csv"
+test_data = "casas_prueba.csv"
+
+
+
+
+
+"------------------------------------------------------------------------------"
 ############################
 ## Definitions dictionary ##
 ############################
