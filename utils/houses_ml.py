@@ -77,4 +77,7 @@ def select_model(model_sel="linear_regression"):
     elif model_sel == "random_forest":
         model = RandomForestRegressor()
 
+    else:
+        raise NameError("RobError: Invalid model selected.")
+
     return model
