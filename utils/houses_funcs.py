@@ -349,6 +349,6 @@ def lists_by_type_of_var(features_dict):
             housingc_cat.append(feat)
 
     print("Numerical columns: {}\n".format(housingc_num))
-    print("Categorical columns: {}".format(housingc_cat))
+    print("Categorical columns: {}\n\n".format(housingc_cat))
 
     return housingc_num, housingc_cat
