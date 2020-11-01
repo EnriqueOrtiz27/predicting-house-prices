@@ -61,7 +61,7 @@ from houses_funcs import (
     display_scores,
     clean_data,
     format_predicts,
-    lists_by_type_of_var
+    features_to_pipes
 )
 
 #### Parameters module
@@ -135,7 +135,7 @@ def main_exec_func(model_sel="lr", predict_test=False):
     housingc.drop(predict_feature, axis=1, inplace=True)
 
     #### Specifying numerical and categorical columns
-    housingc_num, housingc_cat = lists_by_type_of_var(features_dict)
+    housingc_num, housingc_cat = features_to_pipes(features_dict)
 
 
 
