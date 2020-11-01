@@ -65,7 +65,7 @@ features_dict = {
         "ml_label": False
     },
     "Street": {
-        "relevant": False,
+        "relevant": True,
         "data_default_type": "object",
         "null_perc": 0.0,
         "len_uniques": 2,
@@ -272,7 +272,7 @@ features_dict = {
         "ml_label": False
     },
     "Exter Cond": {
-        "relevant": False,
+        "relevant": True,
         "data_default_type": "object",
         "null_perc": 0.0,
         "len_uniques": 4,

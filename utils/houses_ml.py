@@ -53,7 +53,7 @@ cat_pipeline = Pipeline([
 
 
 ## Function to select model that will predict results.
-def select_model(model_sel="linear_regression"):
+def select_model(model_sel="lr"):
     """
     Function to select model that will predict results.
         args:

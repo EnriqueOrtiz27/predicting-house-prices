@@ -282,6 +282,9 @@ def clean_data(data):
     data_clean["MS Zoning"] = np.where(data_clean["MS Zoning"] == "RL", 1, 0) #solo ahí se ven diferencias
 
 
+    ##
+
+
     ## Selecting only the columns marked as relevant == True
     rc = [key for key in features_dict if features_dict[key]["relevant"] == True]
     data_clean = data_clean.loc[:, rc]
@@ -348,7 +351,7 @@ def lists_by_type_of_var(features_dict):
           (features_dict[feat]["data_obj_type"] == "category"):
             housingc_cat.append(feat)
 
-    print("Numerical columns: {}\n".format(housingc_num))
+    print("\nNumerical columns: {}\n".format(housingc_num))
     print("Categorical columns: {}\n\n".format(housingc_cat))
 
     return housingc_num, housingc_cat
