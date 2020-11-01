@@ -282,6 +282,9 @@ def clean_data(data):
     data_clean["MS Zoning"] = np.where(data_clean["MS Zoning"] == "RL", 1, 0) #solo ahí se ven diferencias
 
 
+    ##
+
+
     ## Selecting only the columns marked as relevant == True
     rc = [key for key in features_dict if features_dict[key]["relevant"] == True]
     data_clean = data_clean.loc[:, rc]
@@ -325,7 +328,7 @@ def format_predicts(predictions):
 
 
 ## Creating lists of variables by type.
-def lists_by_type_of_var(features_dict):
+def features_to_pipes(features_dict):
     """
     Creating lists of variables by type.
         args:
@@ -334,21 +337,25 @@ def lists_by_type_of_var(features_dict):
             housingc_num (list): numerical features.
             housingc_cat (list): categorical features.
     """
-    housingc_num = []
-    housingc_cat = []
+    num_pipe = []
+    cat_pipe = []
 
     for feat in features_dict:
 
         if (features_dict[feat]["relevant"] == True) & \
           ((features_dict[feat]["data_obj_type"] == "float64") | (features_dict[feat]["data_obj_type"] == "int64")) & \
+          (features_dict[feat]["pipeline"] == "num_pipe") & \
           (features_dict[feat]["ml_label"] != True):
-            housingc_num.append(feat)
+            num_pipe.append(feat)
 
         elif (features_dict[feat]["relevant"] == True) & \
+          (features_dict[feat]["pipeline"] == "cat_pipe") & \
           (features_dict[feat]["data_obj_type"] == "category"):
-            housingc_cat.append(feat)
+            cat_pipe.append(feat)
 
-    print("Numerical columns: {}\n".format(housingc_num))
-    print("Categorical columns: {}\n\n".format(housingc_cat))
+    relevant_feats = [feat for feat in features_dict if features_dict[feat]["relevant"] == True]
+    print("\nFeatures included in the model ({}) --> {}\n".format(len(relevant_feats), relevant_feats))
+    print("Features to numerical pipeline ({}) --> {}\n".format(len(num_pipe), num_pipe))
+    print("Features to categorical pipeline ({}) --> {}\n\n".format(len(cat_pipe), cat_pipe))
 
-    return housingc_num, housingc_cat
+    return num_pipe, cat_pipe

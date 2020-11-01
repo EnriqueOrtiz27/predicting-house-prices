@@ -61,10 +61,10 @@ from houses_funcs import (
     display_scores,
     clean_data,
     format_predicts,
-    lists_by_type_of_var
+    features_to_pipes
 )
 
-##@@ Parameters module
+#### Parameters module
 from houses_params import (
     features_dict,
     data_path_from_main,
@@ -72,7 +72,7 @@ from houses_params import (
     test_data
 )
 
-##@@ ML module
+#### ML module
 from houses_ml import(
     num_pipeline,
     cat_pipeline,
@@ -135,7 +135,7 @@ def main_exec_func(model_sel="lr", predict_test=False):
     housingc.drop(predict_feature, axis=1, inplace=True)
 
     #### Specifying numerical and categorical columns
-    housingc_num, housingc_cat = lists_by_type_of_var(features_dict)
+    housingc_num, housingc_cat = features_to_pipes(features_dict)
 
 
 
@@ -187,7 +187,7 @@ def main_exec_func(model_sel="lr", predict_test=False):
     ## Making predictions with the test data ##
 
 
-    if predict_test == True:
+    if predict_test == "True":
 
         #### Initial data preparation
         housingc_test = clean_data(df_test)
@@ -210,6 +210,11 @@ def main_exec_func(model_sel="lr", predict_test=False):
 ##################
 
 
+## Set inputed arguments
+model_sel = sys.argv[1]
+predict_test = sys.argv[2]
+
+
 ## Lines to execute main module from the command line
 if __name__ == "__main__":
-    main_exec_func()
+    main_exec_func(model_sel, predict_test)
