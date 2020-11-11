@@ -76,7 +76,8 @@ from houses_params import (
 from houses_ml import(
     num_pipeline,
     cat_pipeline,
-    select_model
+    select_model,
+    cv_rounds
 )
 
 
@@ -173,10 +174,10 @@ def main_exec_func(model_sel="lr", predict_test=False):
     ## Applying cv and displaying result scores
     cv_scores = cross_val_score(
         model,
-        abs(housingc_prp),
+        housingc_prp,
         housingc_labs,
         scoring="neg_mean_squared_log_error",
-        cv=10
+        cv=cv_rounds
     )
 
     display_scores(-cv_scores)
