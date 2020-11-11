@@ -22,6 +22,39 @@ from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 
+from sklearn.model_selection import GridSearchCV
+
+
+
+
+
+"------------------------------------------------------------------------------"
+###################
+## ML Parameters ##
+###################
+
+
+## Number of cross validations
+cv_rounds = 10
+
+## Grid Search CV - Parameters grid
+param_grid = [
+    {
+        "n_estimators": [50, 100, 150, 500],
+        "max_features": [2, 4, 6, 8]
+    },
+    {
+        "bootstrap": [False],
+        "n_estimators": [3, 10],
+        "max_features": [2, 3, 4]
+    }
+]
+
+## Model parameters
+#### Random forest regressor
+max_features = 6
+n_estimators = 100
+
 
 
 
@@ -75,7 +108,7 @@ def select_model(model_sel="lr"):
         model = DecisionTreeRegressor()
 
     elif model_sel == "rf":
-        model = RandomForestRegressor()
+        model = RandomForestRegressor(max_features=max_features, n_estimators=n_estimators)
 
     else:
         raise NameError("RobError: Invalid model selected.")
